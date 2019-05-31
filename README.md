@@ -1,5 +1,7 @@
 # Feed Chi
 
+![alt text](https://github.com/ItsJas/feed-chi/blob/master/images/er.png)
+
 ## About
 
 **Chi** is Hungry, but fortunately it's raining food.
