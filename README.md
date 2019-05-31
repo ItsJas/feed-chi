@@ -1,6 +1,6 @@
 # Feed Chi
 
-![alt text](https://github.com/ItsJas/feed-chi/blob/master/images/er.png) ![alt text](https://github.com/ItsJas/feed-chi/blob/master/images/fd.png) ![alt text](https://github.com/ItsJas/feed-chi/blob/master/images/candy.png)
+![Chi](https://github.com/ItsJas/feed-chi/blob/master/images/er.png) ![food](https://github.com/ItsJas/feed-chi/blob/master/images/fd.png) ![candy](https://github.com/ItsJas/feed-chi/blob/master/images/candy.png)
 
 ## About
 
@@ -25,6 +25,8 @@ or just use the executables, use **FeedChi.love** on Linux/macOS and **FeedChi.e
 * Use the **Arrow keys** to move Chi right or left or to jump.
 
 * If the game is over press the **Spacebar** to start a new game.
+
+![illustrations](https://github.com/ItsJas/feed-chi/blob/master/images/demo.gif)
 
 ## The story
 
