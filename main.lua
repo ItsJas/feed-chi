@@ -73,7 +73,13 @@ function love.update(dt)
   is_eating = false
 
   if is_dead == false then
-    cat.look = 3 --default value
+    --cat.look = 3 --default value
+    if cat.look < 4 then
+      cat.look = 3
+    else
+      cat.look = 6
+    end
+
     if love.keyboard.isDown("right") then
       if cat.x < (love.graphics.getWidth() - cat.img:getWidth()/2) then
         cat.look = 1
