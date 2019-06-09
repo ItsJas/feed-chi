@@ -10,6 +10,8 @@ function love.load()
 --background and window
   background = love.graphics.newImage("images/nature.jpg")
   love.window.setTitle("Feed Chi!")
+  music = love.audio.newSource("sounds/Autumn-day-easy-listening-music.mp3", "stream")
+  music:play()
 
 --cat related variables
   cat.x = love.graphics.getWidth()/2
@@ -23,6 +25,7 @@ function love.load()
   cat.jump_height = -300
   cat.gravity = -500
   cat.ground = cat.y
+  cat.sound = love.audio.newSource("sounds/Cat-sound-effect.mp3", "static")
 
 --food variables
   for i = 1, 10 do
@@ -45,6 +48,7 @@ function love.load()
   bomb.gravity = -400
   bomb.draw = false
   bomb.next = true
+  bomb.sound = love.audio.newSource("sounds/Bomb-sound-effect.mp3", "static")
 
 end
 
@@ -73,7 +77,6 @@ function love.update(dt)
   is_eating = false
 
   if is_dead == false then
-    --cat.look = 3 --default value
     if cat.look < 4 then
       cat.look = 3
     else
@@ -162,6 +165,7 @@ function love.update(dt)
 
     if is_eating == true then
       print ("cat is eating!")
+      cat.sound:play()
       food.y = 0
       food.draw = false
       food.next = true
@@ -170,6 +174,7 @@ function love.update(dt)
     end
     if is_dead == true then
       print ("cat is dead!")
+      bomb.sound:play()
       bomb.img = love.graphics.newImage(bomb.sprites[2])
       cat.look = 7
     end
@@ -183,6 +188,7 @@ function love.update(dt)
     is_dead = false
     cat.look = 1
     score = 0
+    music:play()
     end
 
   end
