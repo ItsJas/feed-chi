@@ -178,6 +178,9 @@ function love.update(dt)
       bomb.sound:play()
       bomb.img = love.graphics.newImage(bomb.sprites[2])
       cat.look = 7
+      love.audio.stop(music)
+      sound = love.audio.newSource("sounds/Sad-trombone-sound.mp3", "static")
+      sound:play()
     end
     cat.img = love.graphics.newImage(cat.sprites[cat.look])
 
@@ -185,11 +188,12 @@ function love.update(dt)
     sleep(0.3)
     bomb.draw = false
     if love.keyboard.isDown('space') then
-    print("spacebar pressed")
-    is_dead = false
-    cat.look = 1
-    score = 0
-    music:play()
+      print("spacebar pressed")
+      is_dead = false
+      cat.look = 1
+      score = 0
+      love.audio.stop(sound)
+      music:play()
     end
 
   end
