@@ -11,6 +11,7 @@ function love.load()
   background = love.graphics.newImage("images/nature.jpg")
   love.window.setTitle("Feed Chi!")
   music = love.audio.newSource("sounds/Autumn-day-easy-listening-music.mp3", "stream")
+  music:setLooping(true)
   music:play()
 
 --cat related variables
