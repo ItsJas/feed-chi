@@ -40,6 +40,7 @@ function love.load()
   food.gravity = -300
   food.draw = true
   food.next = false
+  food.sound = love.audio.newSource("sounds/Bleep-sound.mp3", "static")
 
 --bomb variables
   bomb.sprites = {"images/bomb.png","images/bombexp.png"}
@@ -120,6 +121,10 @@ function love.update(dt)
       end
     end
 
+    if cat.look == 3 or cat.look == 6 then
+      cat.sound:play()
+    end
+
 
     if food.y < (3 * love.graphics.getWidth()/4 - food.img:getWidth()) and food.draw then
       food.y = food.y - food.gravity * dt
@@ -166,7 +171,7 @@ function love.update(dt)
 
     if is_eating == true then
       print ("cat is eating!")
-      cat.sound:play()
+      food.sound:play()
       food.y = 0
       food.draw = false
       food.next = true
