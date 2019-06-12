@@ -31,3 +31,5 @@ or just use the executables, use **FeedChi.love** on Linux/macOS and **FeedChi.e
 ## The story
 
 I made this simple game a while ago with Scratch and I wanted to code it in lua/love just for fun!
+
+P.S. **I sketched** the **Sprites** myself!
