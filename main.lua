@@ -184,14 +184,22 @@ function love.update(dt)
       bomb.img = love.graphics.newImage(bomb.sprites[2])
       cat.look = 7
       love.audio.stop(music)
-      sound = love.audio.newSource("sounds/Sad-trombone-sound.mp3", "static")
-      sound:play()
+      game_over = true
+
     end
     cat.img = love.graphics.newImage(cat.sprites[cat.look])
 
   else
+    --print(bomb.sound:isPlaying())
+    if game_over then --not bomb.sound:isPlaying() and 
+      sound = love.audio.newSource("sounds/Disappoint-fail-timpani-crash-sound-effect.mp3", "static")--Sad-trombone-sound
+      sound:setVolume(0.3)
+      sound:play()
+      game_over = false
+    end    
     sleep(0.3)
     bomb.draw = false
+
     if love.keyboard.isDown('space') then
       print("spacebar pressed")
       is_dead = false
@@ -230,7 +238,9 @@ function love.draw()
   if is_dead == true then
     font = love.graphics.newFont(20)
     love.graphics.setFont(font)
-    love.graphics.printf("Press Spacebar to retry!", 0, love.graphics.getHeight()/2, 800, 'center')
+    if not bomb.draw then
+      love.graphics.printf("Press Spacebar to retry!", 0, love.graphics.getHeight()/2, 800, 'center')
+    end
     love.graphics.setColor(0, 0, 0)
     font = love.graphics.newFont(40)
     love.graphics.setFont(font)
